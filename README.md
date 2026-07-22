@@ -21,3 +21,19 @@ A Full Stack Student Management System built as part of a Full Stack Web Develop
 ## Project Status
 
 🚧 Project setup completed. Development is in progress.
+
+## Current Progress
+
+### Backend
+- Express Server Setup ✅
+- MongoDB Connection ✅
+- Mongoose Integration ✅
+- Student Schema ✅
+- Create Student API ✅
+
+### Upcoming
+- Read Students API
+- Update Student API
+- Delete Student API
+- React Frontend
+- Deployment
