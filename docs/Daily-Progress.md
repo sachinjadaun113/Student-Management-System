@@ -1,51 +1,52 @@
-# Day 1
+# Daily Progress
 
-## Completed
+---
 
-- Project structure created
-- Git initialized
-- Node project initialized
-- Express installed
-- First Express server created
+## Day 1
 
-## Next
+### Completed
 
-- Configure Express
-- Connect MongoDB
+- Initialized Node.js project
+- Installed Express
+- Created project structure
+- Configured Git repository
+- Created README
+- Created project documentation
+- Initial Git commit
 
-# Day 2 - Backend Foundation
+---
 
-## Date
-22 July 2026
+## Day 2
 
-## Completed Tasks
+### Completed
 
-- Connected Express server with local MongoDB.
-- Created database connection file (`config/db.js`).
-- Learned why database connection is separated from `server.js`.
-- Created Student Schema using Mongoose.
-- Learned Schema, Model, and Collection concepts.
-- Created Student Model.
-- Created Student Controller.
-- Created Student Routes.
-- Connected routes with `server.js`.
-- Tested the first POST API using Postman.
-- Successfully inserted the first student into MongoDB.
-- Verified MongoDB automatically generated `_id`, `createdAt`, and `updatedAt`.
-- Understood the backend request flow:
-  Client → Route → Controller → Model → MongoDB.
+- Installed MongoDB and Mongoose
+- Connected Express with MongoDB
+- Created Student Schema
+- Created Student Model
+- Implemented Create Student API
+- Successfully tested API using Postman
+- Learned MongoDB CRUD basics
 
-## Status
+---
 
-✅ Backend architecture is ready.
-✅ Database connection is working.
-✅ First CRUD operation (Create Student) completed successfully.
+## Day 3
 
-## Next Day Plan
+### Completed
 
-- Learn complete request lifecycle in Express.
-- Build Get All Students API.
-- Build Get Student by ID API.
-- Build Update Student API.
-- Build Delete Student API.
-- Learn API testing and error handling.
+- Reorganized project structure
+- Moved backend files to project root
+- Adopted Express + EJS architecture
+- Created folders for Views and Public
+- Created API and Web route structure
+- Updated project documentation
+- Prepared project for frontend development
+
+---
+
+## Next Tasks
+
+- Configure EJS
+- Create Dashboard
+- Build Student Listing Page
+- Implement Get Students API

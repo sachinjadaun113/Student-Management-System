@@ -1,14 +1,24 @@
 # Student Management System
 
-## Description
+A full-stack Student Management System built using Node.js, Express.js, MongoDB, Mongoose, EJS, and Bootstrap 5. The application allows users to manage student records through Create, Read, Update, and Delete (CRUD) operations with a clean and responsive user interface.
 
-A Full Stack Student Management System built as part of a Full Stack Web Development Internship.
+---
+
+## Project Objective
+
+The objective of this project is to learn and implement a complete full-stack web application following the MVC architecture while using server-side rendering with EJS.
+
+This project is being developed as part of an internship assignment and follows professional software development practices including Git version control, documentation, and modular project structure.
+
+---
 
 ## Tech Stack
 
 ### Frontend
-- HTML
-- CSS
+- EJS
+- HTML5
+- CSS3
+- Bootstrap 5
 - JavaScript
 
 ### Backend
@@ -16,24 +26,115 @@ A Full Stack Student Management System built as part of a Full Stack Web Develop
 - Express.js
 
 ### Database
-- MongoDB Atlas (Coming Soon)
+- MongoDB
+- Mongoose
 
-## Project Status
+### Tools
+- Git
+- GitHub
+- VS Code
+- Postman
 
-🚧 Project setup completed. Development is in progress.
+---
 
-## Current Progress
+## Project Structure
 
-### Backend
-- Express Server Setup ✅
-- MongoDB Connection ✅
-- Mongoose Integration ✅
-- Student Schema ✅
-- Create Student API ✅
+Student-Management-System/
 
-### Upcoming
-- Read Students API
-- Update Student API
-- Delete Student API
-- React Frontend
-- Deployment
+├── config/
+
+├── controllers/
+
+├── middleware/
+
+├── models/
+
+├── public/
+
+│ ├── css/
+
+│ ├── js/
+
+│ └── images/
+
+├── routes/
+
+│ ├── api/
+
+│ └── web/
+
+├── views/
+
+│ ├── partials/
+
+│ ├── students/
+
+│ └── dashboard.ejs
+
+├── docs/
+
+├── .env
+
+├── package.json
+
+├── package-lock.json
+
+├── server.js
+
+├── README.md
+
+└── .gitignore
+
+---
+
+## Features
+
+### Dashboard
+- Dashboard homepage
+- Student statistics
+- Quick navigation
+
+### Student Management
+- Add Student
+- View Students
+- Edit Student
+- Delete Student
+
+### Validation
+- Required field validation
+- Email validation
+- Phone validation
+
+### UI Features
+- Responsive Design
+- Bootstrap Components
+- Navigation Bar
+- Success/Error Messages
+
+---
+
+## API Endpoints
+
+GET /api/students
+
+POST /api/students
+
+PUT /api/students/:id
+
+DELETE /api/students/:id
+
+---
+
+## Development Workflow
+
+1. Develop Feature
+2. Test Feature
+3. Update Documentation
+4. Commit Changes
+5. Push to GitHub
+
+---
+
+## Author
+
+Sachin Jadaun
