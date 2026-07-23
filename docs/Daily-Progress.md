@@ -50,3 +50,38 @@
 - Create Dashboard
 - Build Student Listing Page
 - Implement Get Students API
+
+## Day 4 - Backend CRUD Completed
+
+### Objectives
+
+* Complete all Student CRUD APIs.
+* Understand the complete request flow between Express, Mongoose, and MongoDB.
+
+### Completed Tasks
+
+* Implemented **Get All Students API**.
+* Implemented **Get Student By ID API**.
+* Implemented **Update Student API**.
+* Implemented **Delete Student API**.
+* Tested all CRUD operations successfully using Postman.
+* Verified database changes in MongoDB.
+* Learned the difference between MongoDB `_id` and Express `req.params.id`.
+* Understood how `find()`, `findById()`, `findByIdAndUpdate()`, and `findByIdAndDelete()` work.
+* Discussed the implementation of the search feature using query parameters (`req.query`).
+
+### Current Project Status
+
+* Project Setup 
+* MongoDB Connection 
+* Student Schema 
+* Student CRUD APIs 
+* API Testing 
+* EJS Setup 
+
+### Next Plan
+
+* Build the frontend using EJS and Bootstrap.
+* Display students in a table.
+* Connect frontend pages with backend APIs.
+* Implement search and filter functionality.

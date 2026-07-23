@@ -135,6 +135,25 @@ DELETE /api/students/:id
 
 ---
 
+## Completed Features
+
+* Express.js server setup
+* MongoDB connection using Mongoose
+* MVC project structure
+* Student schema creation
+* RESTful CRUD APIs
+
+  * Create Student
+  * Get All Students
+  * Get Student By ID
+  * Update Student
+  * Delete Student
+* API testing with Postman
+* EJS view engine configuration
+* Project documentation
+* Git and GitHub version control
+
+
 ## Author
 
 Sachin Jadaun
