@@ -1,0 +1,105 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/navbar.ejs") %>
+
+<div class="container mt-5">
+
+    <!-- Page Header -->
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+            <h2 class="fw-bold">
+                Student List
+            </h2>
+
+            <p class="text-muted">
+                Manage all registered students.
+            </p>
+        </div>
+
+        <a href="/students/add" class="btn btn-success">
+            <i class="bi bi-person-plus-fill"></i>
+            Add Student
+        </a>
+
+    </div>
+
+    <!-- Search Box -->
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-body">
+
+            <form action="/students" method="GET">
+
+                <div class="input-group">
+
+                    <input
+                        type="text"
+                        name="search"
+                        class="form-control"
+                        placeholder="Search by Name or Email">
+
+                    <button class="btn btn-primary">
+
+                        <i class="bi bi-search"></i>
+
+                        Search
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- Student Table -->
+
+    <div class="card shadow border-0">
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Course</th>
+                        <th>Age</th>
+                        <th width="220">Actions</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <!-- Student rows will come from MongoDB -->
+
+                    <tr>
+
+                        <td colspan="7" class="text-center text-muted py-5">
+
+                            No students found.
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

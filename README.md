@@ -153,6 +153,32 @@ DELETE /api/students/:id
 * Project documentation
 * Git and GitHub version control
 
+## Current Progress
+
+### Backend
+-  Express.js Setup
+-  MongoDB Connection
+-  Mongoose Models
+-  Student CRUD REST APIs
+-  MVC Architecture
+-  API Testing with Postman
+
+### Frontend
+-  EJS Setup
+-  Bootstrap Integration
+-  Bootstrap Icons
+-  Reusable Header, Navbar and Footer
+-  Admin Login UI
+-  Dashboard UI
+-  Student List UI
+-  Add Student UI
+-  Edit Student UI
+-  Student Details UI
+
+### Next Milestone
+- Connect frontend with backend.
+- Implement Admin Authentication.
+- Render dynamic data from MongoDB.
 
 ## Author
 

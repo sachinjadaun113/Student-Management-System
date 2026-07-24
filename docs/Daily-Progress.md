@@ -85,3 +85,37 @@
 * Display students in a table.
 * Connect frontend pages with backend APIs.
 * Implement search and filter functionality.
+
+## Day 5 – EJS Frontend Development (UI)
+
+### Completed
+
+- Integrated Bootstrap with EJS project.
+- Created reusable EJS partials:
+  - Header
+  - Navbar
+  - Footer
+- Designed Admin Login page.
+- Designed Dashboard page.
+- Designed Student List page.
+- Designed Add Student page.
+- Designed Edit Student page.
+- Designed Student Details page.
+- Added Bootstrap Icons.
+- Added custom CSS for modern UI.
+- Planned dynamic integration with MongoDB.
+
+### Learned
+
+- EJS include() for reusable layouts.
+- Bootstrap components (Cards, Forms, Tables, Buttons).
+- Bootstrap Icons.
+- Difference between static UI and dynamic EJS rendering.
+- Why express.urlencoded() is required for HTML forms.
+
+### Next Plan
+
+- Connect EJS pages with controllers.
+- Display real MongoDB data.
+- Complete Admin Login authentication.
+- Make CRUD operations work from the frontend.
