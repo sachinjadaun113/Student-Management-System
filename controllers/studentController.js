@@ -26,11 +26,9 @@ const getAllStudents = async (req, res) => {
   try {
     const students = await Student.find();
 
-    res.status(200).json({
-      success: true,
-      count: students.length,
-      data: students,
-    });
+      res.render("students/index", {
+        students
+      });
   } catch (error) {
     res.status(500).json({
       success: false,

@@ -1,33 +1,33 @@
 const express = require("express");
 const router = express.Router();
+const { isAuthenticated } = require("../../middleware/authMiddleware");
+const { dashboard } = require("../../controllers/dashboardController");
+const { getAllStudents } = require("../../controllers/studentController");
 
-// Dashboard
-router.get("/", (req, res) => {
-    res.render("dashboard");
-});
 
 // Login Page
 router.get("/login", (req, res) => {
     res.render("auth/login");
 });
 
+// Dashboard
+router.get("/", isAuthenticated, dashboard);
+
 // Student List
-router.get("/students", (req, res) => {
-    res.render("students/index");
-});
+router.get("/students", isAuthenticated, getAllStudents);
 
 // Add Student
-router.get("/students/add", (req, res) => {
+router.get("/students/add", isAuthenticated,(req, res) => {
     res.render("students/add");
 });
 
 // Edit Student
-router.get("/students/edit/:id", (req, res) => {
+router.get("/students/edit/:id", isAuthenticated,(req, res) => {
     res.render("students/edit");
 });
 
 // Student Details
-router.get("/students/:id", (req, res) => {
+router.get("/students/:id", isAuthenticated,(req, res) => {
     res.render("students/details");
 });
 

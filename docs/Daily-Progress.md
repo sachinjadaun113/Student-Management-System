@@ -119,3 +119,91 @@
 - Display real MongoDB data.
 - Complete Admin Login authentication.
 - Make CRUD operations work from the frontend.
+
+# Day 6 Progress Report
+
+**Date:** 25 July 2026
+
+## Work Completed
+
+### 1. Admin Authentication
+- Created Admin model.
+- Created seedAdmin.js to generate default admin credentials.
+- Implemented password hashing using bcrypt.
+- Added default admin login:
+  - Username: admin
+  - Password: admin123
+
+### 2. Session Management
+- Installed and configured express-session.
+- Added session middleware in server.js.
+- Implemented session creation after successful login.
+- Implemented session destruction on logout.
+
+### 3. Authentication Module
+- Created authController.js.
+- Implemented admin login functionality.
+- Implemented logout functionality.
+- Verified passwords using bcrypt.compare().
+
+### 4. Authentication Routes
+- Created authRoutes.js.
+- Added POST /login route.
+- Added GET /logout route.
+
+### 5. Route Protection
+- Created authMiddleware.js.
+- Protected dashboard and student management pages.
+- Redirect unauthenticated users to the login page.
+
+### 6. Dashboard
+- Created dashboardController.js.
+- Displayed total number of students using Student.countDocuments().
+- Added database connection status card.
+- Added system status card.
+
+### 7. Student List Integration
+- Connected Student List page with MongoDB.
+- Retrieved student records using Student.find().
+- Displayed student data dynamically in the EJS table.
+- Added View, Edit and Delete action buttons.
+
+### 8. MVC Improvements
+- Separated Web routes and API routes.
+- API routes return JSON responses.
+- Web routes render EJS pages.
+- Improved project structure according to MVC architecture.
+
+## Files Created
+- models/Admin.js
+- controllers/authController.js
+- controllers/dashboardController.js
+- middleware/authMiddleware.js
+- routes/web/authRoutes.js
+- scripts/seedAdmin.js
+
+## Files Updated
+- server.js
+- controllers/studentController.js
+- routes/web/pageRoutes.js
+- routes/api/studentRoutes.js
+- views/dashboard.ejs
+- views/students/index.ejs
+
+## Current Status
+- Student CRUD API completed.
+- Admin authentication completed.
+- Session management completed.
+- Protected routes implemented.
+- Dynamic dashboard completed.
+- Student list integrated with MongoDB.
+- MVC architecture improved.
+
+## Next Day Plan
+- Complete Add Student functionality.
+- Complete Edit Student functionality.
+- Complete View Student Details page.
+- Complete Delete Student functionality.
+- Add success and error messages.
+- Final testing and bug fixing.
+- Prepare project for deployment.

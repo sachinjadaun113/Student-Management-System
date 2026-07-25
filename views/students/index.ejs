@@ -60,41 +60,68 @@
 
         <div class="card-body table-responsive">
 
-            <table class="table table-hover align-middle">
+           <table class="table table-hover align-middle">
 
-                <thead class="table-dark">
+    <thead class="table-dark">
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Course</th>
+            <th>Age</th>
+            <th width="220">Actions</th>
+        </tr>
+    </thead>
 
-                    <tr>
+    <tbody>
 
-                        <th>#</th>
-                        <th>Name</th>
-                        <th>Email</th>
-                        <th>Phone</th>
-                        <th>Course</th>
-                        <th>Age</th>
-                        <th width="220">Actions</th>
+        <% if (students && students.length > 0) { %>
 
-                    </tr>
+            <% students.forEach((student, index) => { %>
 
-                </thead>
+                <tr>
 
-                <tbody>
+                    <td><%= index + 1 %></td>
+                    <td><%= student.name %></td>
+                    <td><%= student.email %></td>
+                    <td><%= student.phone %></td>
+                    <td><%= student.course %></td>
+                    <td><%= student.age %></td>
 
-                    <!-- Student rows will come from MongoDB -->
+                    <td>
 
-                    <tr>
+                        <a href="/students/<%= student._id %>" class="btn btn-info btn-sm">
+                            View
+                        </a>
 
-                        <td colspan="7" class="text-center text-muted py-5">
+                        <a href="/students/edit/<%= student._id %>" class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
 
-                            No students found.
+                        <a href="/students/delete/<%= student._id %>" class="btn btn-danger btn-sm">
+                            Delete
+                        </a>
 
-                        </td>
+                    </td>
 
-                    </tr>
+                </tr>
 
-                </tbody>
+            <% }) %>
 
-            </table>
+        <% } else { %>
+
+            <tr>
+                <td colspan="7" class="text-center text-muted py-4">
+                    No Students Found
+                </td>
+            </tr>
+
+        <% } %>
+
+    </tbody>
+
+</table>
 
         </div>
 
