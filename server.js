@@ -37,6 +37,7 @@ app.use(
 //routes
 app.use("/", authRoutes);
 app.use("/", pageRoutes);
+// to check db opr
 app.use("/api/students", studentRoutes);
 
 const PORT = process.env.PORT || 5000;

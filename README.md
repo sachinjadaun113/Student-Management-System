@@ -37,148 +37,174 @@ This project is being developed as part of an internship assignment and follows 
 
 ---
 
+## Installation
+
+```bash
+git clone <repository-url>
+
+cd Student-Management-System
+
+npm install
+
+npm start
+```
+
+Visit:
+
+```
+http://localhost:5000
+```
+
+## Default Admin Credentials
+
+Run the following command before logging in:
+
+```bash
+node scripts/seedAdmin.js
+```
+
+Default Credentials:
+
+- Username: admin
+- Password: admin123
+```
+
 ## Project Structure
 
 Student-Management-System/
 
 ├── config/
-
+│   └── db.js
+│
 ├── controllers/
-
+│   ├── authController.js
+│   ├── dashboardController.js
+│   ├── studentController.js          # API Controllers
+│   └── studentWebController.js       # Web Controllers
+│
 ├── middleware/
-
+│   └── authMiddleware.js
+│
 ├── models/
-
-├── public/
-
-│ ├── css/
-
-│ ├── js/
-
-│ └── images/
-
+│   ├── Admin.js
+│   └── Student.js
+│
 ├── routes/
-
-│ ├── api/
-
-│ └── web/
-
+│   ├── api/
+│   │   └── studentRoutes.js
+│   └── web/
+│       ├── authRoutes.js
+│       └── pageRoutes.js
+│
+├── scripts/
+│   └── seedAdmin.js
+│
+├── public/
+│   ├── css/
+│   ├── js/
+│   └── images/
+│
 ├── views/
-
-│ ├── partials/
-
-│ ├── students/
-
-│ └── dashboard.ejs
-
+│   ├── auth/
+│   ├── partials/
+│   ├── students/
+│   └── dashboard.ejs
+│
 ├── docs/
-
+│
 ├── .env
-
+├── .gitignore
 ├── package.json
-
 ├── package-lock.json
-
 ├── server.js
-
-├── README.md
-
-└── .gitignore
+└── README.md
 
 ---
 
 ## Features
 
+### Admin Authentication
+- Secure Admin Login
+- Session-based Authentication
+- Protected Routes
+- Logout Functionality
+
 ### Dashboard
-- Dashboard homepage
-- Student statistics
-- Quick navigation
+- Total Students
+- Available Courses
+- Today's Date
+- Quick Navigation
 
 ### Student Management
 - Add Student
-- View Students
+- View Student List
+- View Student Details
 - Edit Student
 - Delete Student
 
-### Validation
-- Required field validation
-- Email validation
-- Phone validation
+### REST API
+- Create Student
+- Get All Students
+- Get Student By ID
+- Update Student
+- Delete Student
 
-### UI Features
-- Responsive Design
-- Bootstrap Components
-- Navigation Bar
-- Success/Error Messages
+### User Interface
+- Responsive Bootstrap 5 Design
+- Bootstrap Icons
+- Professional Dashboard
+- Reusable Header, Navbar and Footer
 
----
-
-## API Endpoints
-
-GET /api/students
-
-POST /api/students
-
-PUT /api/students/:id
-
-DELETE /api/students/:id
-
----
-
-## Development Workflow
-
-1. Develop Feature
-2. Test Feature
-3. Update Documentation
-4. Commit Changes
-5. Push to GitHub
-
----
 
 ## Completed Features
 
-* Express.js server setup
-* MongoDB connection using Mongoose
-* MVC project structure
-* Student schema creation
-* RESTful CRUD APIs
-
-  * Create Student
-  * Get All Students
-  * Get Student By ID
-  * Update Student
-  * Delete Student
-* API testing with Postman
-* EJS view engine configuration
-* Project documentation
-* Git and GitHub version control
+- Express.js Server Setup
+- MongoDB Connection
+- MVC Architecture
+- Student Schema
+- Admin Schema
+- Session-based Authentication
+- Protected Routes
+- RESTful Student CRUD APIs
+- Student CRUD Web Module
+- Dashboard
+- Student Details Page
+- Bootstrap Responsive UI
+- Bootstrap Icons
+- Reusable Layout using EJS Partials
+- Git & GitHub Version Control
+- API Testing with Postman
 
 ## Current Progress
 
 ### Backend
--  Express.js Setup
--  MongoDB Connection
--  Mongoose Models
--  Student CRUD REST APIs
--  MVC Architecture
--  API Testing with Postman
+- Express.js Setup
+- MongoDB Connection
+- Mongoose Models
+- Student CRUD REST APIs
+- Admin Authentication
+- Session Management
+- Protected Routes
+- MVC Architecture
 
 ### Frontend
--  EJS Setup
--  Bootstrap Integration
--  Bootstrap Icons
--  Reusable Header, Navbar and Footer
--  Admin Login UI
--  Dashboard UI
--  Student List UI
--  Add Student UI
--  Edit Student UI
--  Student Details UI
+- EJS View Engine
+- Bootstrap 5 Integration
+- Responsive Dashboard
+- Student CRUD Pages
+- Student Details Page
+- Professional Navigation Bar
+- Dynamic Dashboard Cards
 
-### Next Milestone
-- Connect frontend with backend.
-- Implement Admin Authentication.
-- Render dynamic data from MongoDB.
+
+## Upcoming Features
+
+- Attendance Management
+- Course Management
+- Search and Filter
+- Academic Information
+- MongoDB Atlas Deployment
+- Final Documentation
 
 ## Author
 

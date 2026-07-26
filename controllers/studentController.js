@@ -1,3 +1,4 @@
+//only for checking api
 const Student = require("../models/Student");
 
 // Add New Student
@@ -29,6 +30,11 @@ const getAllStudents = async (req, res) => {
       res.render("students/index", {
         students
       });
+      res.status(200).json({
+      success: true,
+      count: students.length,
+      data: students,
+    });
   } catch (error) {
     res.status(500).json({
       success: false,
