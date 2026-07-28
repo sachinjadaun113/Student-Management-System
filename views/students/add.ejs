@@ -100,20 +100,19 @@
                                     Course
                                 </label>
 
-                                <select
-                                    name="course"
-                                    class="form-select"
-                                    required>
+                                <select class="form-select" name="course" required>
 
-                                    <option value="">
-                                        Select Course
-                                    </option>
+                                    <option value="">Select Course</option>
 
-                                    <option>MERN Stack</option>
-                                    <option>Java Full Stack</option>
-                                    <option>Python</option>
-                                    <option>Data Science</option>
-                                    <option>Cyber Security</option>
+                                    <% courses.forEach(course => { %>
+
+                                        <option value="<%= course.courseName %>">
+
+                                            <%= course.courseName %>
+
+                                        </option>
+
+                                    <% }) %>
 
                                 </select>
 

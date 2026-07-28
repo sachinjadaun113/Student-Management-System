@@ -90,29 +90,21 @@
                                     Course
                                 </label>
 
-                                <select class="form-select" name="course">
-                                 
-                                     <option value="MERN Stack" <%= student.course === "MERN Stack" ? "selected" : "" %>>
-                                         MERN Stack
-                                     </option>
-                                 
-                                     <option value="Java Full Stack" <%= student.course === "Java Full Stack" ? "selected" : "" %>>
-                                         Java Full Stack
-                                     </option>
+                                <select class="form-select" name="course" required>
 
-                                     <option value="Python" <%= student.course === "Python" ? "selected" : "" %>>
-                                         Python
-                                     </option>
+                                    <% courses.forEach(course => { %>
 
-                                     <option value="Data Science" <%= student.course === "Data Science" ? "selected" : "" %>>
-                                         Data Science
-                                     </option>
-                                 
-                                     <option value="Cyber Security" <%= student.course === "Cyber Security" ? "selected" : "" %>>
-                                         Cyber Security
-                                     </option>
+                                        <option
+                                            value="<%= course.courseName %>"
+                                            <%= student.course === course.courseName ? "selected" : "" %>>
 
-                                 </select>                                 
+                                            <%= course.courseName %>
+
+                                        </option>
+
+                                    <% }) %>
+
+                                </select>                                
 
                             </div>
 

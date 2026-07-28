@@ -1,4 +1,5 @@
 const Student = require("../models/Student");
+const Course = require("../models/Course");
 
 // to get all student list
 exports.getAllStudents = async (req, res) => {
@@ -19,9 +20,22 @@ exports.getAllStudents = async (req, res) => {
 };
 
 // to get add form
-exports.showAddStudentForm = (req, res) => {
+exports.showAddStudentForm = async (req, res) => {
 
-    res.render("students/add");
+    try {
+
+        const courses = await Course.find();
+
+        res.render("students/add", {
+            courses
+        });
+
+    } catch (error) {
+
+        console.log(error);
+        res.redirect("/students");
+
+    }
 
 };
 
@@ -50,14 +64,16 @@ exports.showEditStudentForm = async (req, res) => {
 
         const student = await Student.findById(req.params.id);
 
+        const courses = await Course.find();
+
         res.render("students/edit", {
-            student
+            student,
+            courses
         });
 
     } catch (error) {
 
         console.log(error);
-
         res.redirect("/students");
 
     }
