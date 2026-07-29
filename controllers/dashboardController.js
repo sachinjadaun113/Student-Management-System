@@ -1,4 +1,6 @@
 const Student = require("../models/Student");
+const Course = require("../models/Course");
+
 
 exports.dashboard = async (req, res) => {
 
@@ -6,7 +8,7 @@ exports.dashboard = async (req, res) => {
 
         const totalStudents = await Student.countDocuments();
 
-        const totalCourses = (await Student.distinct("course")).length;
+        const totalCourses = await Course.countDocuments();
 
         const today = new Date();
 

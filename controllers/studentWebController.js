@@ -5,7 +5,7 @@ const Course = require("../models/Course");
 exports.getAllStudents = async (req, res) => {
     try {
 
-        const students = await Student.find();
+        const students = await Student.find().sort({ rollNumber: 1 });
 
         res.render("students/index", {
             students

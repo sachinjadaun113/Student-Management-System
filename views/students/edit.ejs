@@ -39,6 +39,23 @@
 
                             </div>
 
+                            <!-- Roll No. -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Roll No
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="rollNumber"
+                                Value="<%=student.rollNumber%>"
+                                required>
+
+                            </div>
+
                             <div class="col-md-6 mb-3">
 
                                 <label class="form-label fw-semibold">
@@ -84,6 +101,40 @@
 
                             </div>
 
+                            <!-- Branch -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Branch
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="studentClass"
+                                value="<%=student.studentClass%>"
+                                required>
+
+                            </div>
+
+                             <!-- Section -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Section
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="section"
+                                value="<%=student.section%>"
+                                required>
+
+                            </div>
+
                             <div class="col-12 mb-4">
 
                                 <label class="form-label fw-semibold">
@@ -107,6 +158,73 @@
                                 </select>                                
 
                             </div>
+
+                            <!-- Addmission Date -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Admission Date
+                                </label>
+
+                               <input
+                                type="date"
+                                class="form-control"
+                                name="admissionDate"
+                                value="<%=student.admissionDate ? student.admissionDate.toISOString().split('T')[0] : '' %>"
+                                required>
+
+                            </div>
+
+                             <!-- Academic Year -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Academic Year
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="academicYear"
+                                value="<%=student.academicYear%>"
+                                required>
+                            </div>
+
+                            <!-- Parent Name -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Parent Name
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="parentName"
+                                value="<%=student.parentName%>"
+                                required>
+                            </div>
+
+                            <!-- Parent Phone -->
+
+                            <div class="col-md-6 mb-3">
+
+                                <label class="form-label fw-semibold">
+                                    Parent Phone
+                                </label>
+
+                               <input
+                                type="text"
+                                class="form-control"
+                                name="parentPhone"
+                                value="<%=student.parentPhone%>"
+                                required>
+                            </div>
+
+
 
                         </div>
 

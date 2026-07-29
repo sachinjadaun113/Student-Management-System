@@ -9,10 +9,13 @@ const connectDB = require("./config/db");
 // for check api
 const studentRoutes = require("./routes/api/studentRoutes");
 const courseRoutes = require("./routes/api/courseRoutes");
+const attendanceRoutes = require("./routes/api/attendanceRoutes");
 // for web pages
 const pageRoutes = require("./routes/web/pageRoutes");
 const authRoutes = require("./routes/web/authRoutes");
 const courseWebRoutes = require("./routes/web/courseRoutes");
+const attendanceWebRoutes = require("./routes/web/attendanceRoutes");
+
 
 const app = express();
 
@@ -43,11 +46,15 @@ app.use(
 app.use("/", authRoutes);
 app.use("/", pageRoutes);
 app.use("/", courseWebRoutes);
+app.use("/", attendanceWebRoutes);
 
 // to check db opr
 app.use("/api/students", studentRoutes);
 // to check course api
 app.use("/api/courses", courseRoutes);
+// to check attendance 
+app.use("/api/attendance", attendanceRoutes);
+
 
 const PORT = process.env.PORT || 5000;
 

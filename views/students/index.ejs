@@ -35,8 +35,9 @@
                     <input
                         type="text"
                         name="search"
+                        id="searchStudent"
                         class="form-control"
-                        placeholder="Search by Name or Email">
+                        placeholder="Search">
 
                     <button class="btn btn-primary">
 
@@ -54,83 +55,134 @@
 
     </div>
 
-    <!-- Student Table -->
+   <div class="card shadow border-0">
 
-    <div class="card shadow border-0">
+    <div class="card-body table-responsive">
 
-        <div class="card-body table-responsive">
+        <table class="table table-hover align-middle">
 
-           <table class="table table-hover align-middle">
-
-    <thead class="table-dark">
-        <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Course</th>
-            <th>Age</th>
-            <th width="220">Actions</th>
-        </tr>
-    </thead>
-
-    <tbody>
-
-        <% if (students && students.length > 0) { %>
-
-            <% students.forEach((student, index) => { %>
+            <thead class="table-dark">
 
                 <tr>
 
-                    <td><%= index + 1 %></td>
-                    <td><%= student.name %></td>
-                    <td><%= student.email %></td>
-                    <td><%= student.phone %></td>
-                    <td><%= student.course %></td>
-                    <td><%= student.age %></td>
-
-                    <td>
-
-                        <a href="/students/<%= student._id %>" class="btn btn-info btn-sm">
-                            View
-                        </a>
-
-                        <a href="/students/edit/<%= student._id %>" class="btn btn-warning btn-sm">
-                            Edit
-                        </a>
-
-                        <a href="/students/delete/<%= student._id %>"
-                           class="btn btn-danger btn-sm"
-                           onclick="return confirm('Are you sure you want to delete this student?')">
-
-                            Delete
-
-                        </a>                        
-
-                    </td>
+                    <!-- <th>#</th> -->
+                    <th>Roll No.</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Year</th>
+                    <th>Class</th>
+                    <th>Phone</th>
+                    <th width="220">Actions</th>
 
                 </tr>
 
-            <% }) %>
+            </thead>
 
-        <% } else { %>
+            <tbody>
 
-            <tr>
-                <td colspan="7" class="text-center text-muted py-4">
-                    No Students Found
-                </td>
-            </tr>
+                <% if (students && students.length > 0) { %>
 
-        <% } %>
+                    <% students.forEach((student, index) => { %>
 
-    </tbody>
+                        <tr>
 
-</table>
+                            <!-- <td><%= index + 1 %></td> -->
+
+                            <td><%= student.rollNumber %></td>
+
+                            <td><%= student.name %></td>
+
+                            <td><%= student.course %></td>
+
+                            <td><%= student.academicYear %></td>
+
+                            <td><%= student.studentClass %></td>
+
+                            <td><%= student.phone %></td>
+
+                            <td>
+
+                                <a href="/students/<%= student._id %>" class="btn btn-info btn-sm">
+                                    View
+                                </a>
+
+                                <a href="/students/edit/<%= student._id %>" class="btn btn-warning btn-sm">
+                                    Edit
+                                </a>
+
+                                <a href="/students/delete/<%= student._id %>"
+                                   class="btn btn-danger btn-sm"
+                                   onclick="return confirm('Are you sure you want to delete this student?')">
+                                    Delete
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                <% } else { %>
+
+                    <tr>
+
+                        <td colspan="7" class="text-center text-muted py-4">
+
+                            No Students Found
+
+                        </td>
+
+                    </tr>
+
+                <% } %>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
 
         </div>
 
     </div>
 
 </div>
+<script>
+const search = document.getElementById("searchStudent");
+
+search.addEventListener("keyup", function () {
+
+    const value = this.value.trim().toLowerCase();
+
+    document.querySelectorAll("tbody tr").forEach(row => {
+
+        const roll = row.cells[0].innerText.toLowerCase();
+        const name = row.cells[1].innerText.toLowerCase();
+        const course = row.cells[2].innerText.toLowerCase();
+        const year = row.cells[3].innerText.toLowerCase();
+        const section = row.cells[4].innerText.toLowerCase();
+
+        if (
+            roll.includes(value) ||
+            name.includes(value) ||
+            course.includes(value) ||
+            year.includes(value) ||
+            section.includes(value)
+        ) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+});
+</script>
 
 <%- include("../partials/footer.ejs") %>
