@@ -1,0 +1,177 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/navbar.ejs") %>
+
+<div class="container mt-4">
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+        <h2 class="fw-bold">Student Attendance Summary</h2>
+        <p class="text-muted">Complete attendance report</p>
+    </div>
+
+    <a href="/attendance/summary" class="btn btn-secondary">
+        <i class="bi bi-arrow-left"></i> Back
+    </a>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-body">
+
+        <div class="row">
+
+            <div class="col-md-4">
+                <strong>Roll No.</strong><br>
+                <%= student.rollNumber %>
+            </div>
+
+            <div class="col-md-4">
+                <strong>Name</strong><br>
+                <%= student.name %>
+            </div>
+
+            <div class="col-md-4">
+                <strong>Course</strong><br>
+                <%= student.course %>
+            </div>
+
+            <div class="col-md-4 mt-3">
+                <strong>Class</strong><br>
+                <%= student.studentClass %>
+            </div>
+
+            <div class="col-md-4 mt-3">
+                <strong>Year</strong><br>
+                <%= student.academicYear %>
+            </div>
+
+            <div class="col-md-4 mt-3">
+                <strong>Section</strong><br>
+                <%= student.section %>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div class="row mb-4">
+
+<div class="col-md-3">
+<div class="card text-center border-success shadow-sm">
+<div class="card-body">
+<h6>Present</h6>
+<h2 class="text-success"><%= present %></h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center border-danger shadow-sm">
+<div class="card-body">
+<h6>Absent</h6>
+<h2 class="text-danger"><%= absent %></h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center shadow-sm">
+<div class="card-body">
+<h6>Total Classes</h6>
+<h2><%= total %></h2>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card text-center border-primary shadow-sm">
+<div class="card-body">
+<h6>Attendance %</h6>
+<h2 class="text-primary"><%= percentage %>%</h2>
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="card shadow">
+
+<div class="card-header bg-dark text-white">
+
+Attendance History
+
+</div>
+
+<div class="card-body table-responsive">
+
+<table class="table table-bordered table-hover align-middle">
+
+<thead class="table-light">
+
+<tr>
+<th>#</th>
+<th>Date</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody>
+
+<% attendance.forEach((item,index)=>{ %>
+
+<tr>
+
+<td><%= index+1 %></td>
+
+<td>
+<%= new Date(item.date).toLocaleDateString("en-GB") %>
+</td>
+
+<td>
+
+<% if(item.status==="Present"){ %>
+
+<span class="badge bg-success">
+Present
+</span>
+
+<% }else{ %>
+
+<span class="badge bg-danger">
+Absent
+</span>
+
+<% } %>
+
+</td>
+
+</tr>
+
+<% }) %>
+
+<% if(attendance.length===0){ %>
+
+<tr>
+
+<td colspan="3" class="text-center text-muted">
+
+No attendance found.
+
+</td>
+
+</tr>
+
+<% } %>
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<%- include("../partials/footer.ejs") %>

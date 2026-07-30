@@ -1,5 +1,7 @@
 const Student = require("../models/Student");
 const Course = require("../models/Course");
+const Attendance = require("../models/Attendance");
+
 
 // to get all student list
 exports.getAllStudents = async (req, res) => {
@@ -113,8 +115,40 @@ exports.studentDetails = async (req, res) => {
 
         const student = await Student.findById(req.params.id);
 
+        if (!student) {
+
+            return res.redirect("/students");
+
+        }
+
+        const present = await Attendance.countDocuments({
+
+            student: student._id,
+            status: "Present"
+
+        });
+
+        const absent = await Attendance.countDocuments({
+
+            student: student._id,
+            status: "Absent"
+
+        });
+
+        const total = present + absent;
+
+        const percentage = total === 0
+            ? 0
+            : ((present / total) * 100).toFixed(2);
+
         res.render("students/details", {
-            student
+
+            student,
+            present,
+            absent,
+            total,
+            percentage
+
         });
 
     } catch (error) {

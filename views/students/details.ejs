@@ -148,6 +148,40 @@
 
                         <div class="col-md-6 mb-3">
 
+                            <strong>Attendance</strong>
+
+                            <div class="d-flex align-items-center mt-2">
+
+                                 <span class="badge bg-success fs-6 me-3">
+
+                                    <%= percentage %>%
+
+                                </span>
+
+                                <a
+                                    href="/attendance/summary/<%= student._id %>"
+                                    class="btn btn-outline-primary btn-sm">
+                        
+                                    <i class="bi bi-eye-fill"></i>
+
+                                    View Attendance
+
+                                </a>
+
+                            </div>
+
+                            <small class="text-muted">
+
+                                Present: <%= present %> |
+                                Absent: <%= absent %> |
+                                Total: <%= total %>
+
+                            </small>
+
+                        </div>
+
+                        <div class="col-md-6 mb-3">
+
                             <strong>Student ID</strong>
 
                             <p class="text-muted">

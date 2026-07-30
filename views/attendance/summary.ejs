@@ -1,0 +1,344 @@
+<%- include("../partials/header.ejs") %>
+<%- include("../partials/navbar.ejs") %>
+
+<div class="container mt-5">
+
+    <!-- Page Header -->
+
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+        <div>
+
+            <h2 class="fw-bold">
+
+                Attendance Summary
+
+            </h2>
+
+            <p class="text-muted">
+
+                View attendance summary of all students.
+
+            </p>
+
+        </div>
+
+        <a href="/attendance" class="btn btn-secondary">
+
+            <i class="bi bi-arrow-left"></i>
+
+            Attendance History
+
+        </a>
+
+    </div>
+
+    <!-- Filters -->
+
+    <div class="card shadow-sm border-0 mb-4">
+
+        <div class="card-body">
+
+            <div class="row g-3">
+
+                <div class="col-md-3">
+
+                    <label class="form-label fw-semibold">
+
+                        From
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="fromDate"
+                        class="form-control">
+
+                </div>
+
+                <div class="col-md-3">
+
+                    <label class="form-label fw-semibold">
+
+                        To
+
+                    </label>
+
+                    <input
+                        type="date"
+                        id="toDate"
+                        class="form-control">
+
+                </div>
+
+                <div class="col-md-6">
+
+                    <label class="form-label fw-semibold">
+
+                        Search Student
+
+                    </label>
+
+                    <div class="input-group">
+
+                        <select
+                            id="searchFilter"
+                            class="form-select"
+                            style="max-width:180px;">
+
+                            <option value="0">Roll No.</option>
+                            <option value="1">Name</option>
+                            <option value="2">Course</option>
+                            <option value="3">Class</option>
+                            <option value="4">Year</option>
+                            <option value="5">Section</option>
+
+                        </select>
+
+                        <input
+                            type="text"
+                            id="searchStudent"
+                            class="form-control"
+                            placeholder="Search...">
+
+                        <span class="input-group-text">
+
+                            <i class="bi bi-search"></i>
+
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Summary Cards
+
+    <div class="row mb-4">
+
+        <div class="col-md-3">
+
+            <div class="card border-0 shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>Total Students</h6>
+
+                    <h3 id="totalStudents">
+
+                        <%= summary.length %>
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-0 shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>Total Present</h6>
+
+                    <h3 class="text-success" id="totalPresent">
+
+                        <%= summary.reduce((sum,s)=>sum+s.present,0) %>
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-0 shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>Total Absent</h6>
+
+                    <h3 class="text-danger" id="totalAbsent">
+
+                        <%= summary.reduce((sum,s)=>sum+s.absent,0) %>
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="col-md-3">
+
+            <div class="card border-0 shadow text-center">
+
+                <div class="card-body">
+
+                    <h6>Total Classes</h6>
+
+                    <h3 id="totalClasses">
+
+                        <%= summary.reduce((sum,s)=>sum+s.total,0) %>
+
+                    </h3>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div> -->
+
+    <!-- Summary Table -->
+
+    <div class="card shadow border-0">
+
+        <div class="card-body table-responsive">
+
+            <table class="table table-hover align-middle">
+
+                <thead class="table-dark">
+
+                    <tr>
+
+                        <th>Roll No.</th>
+                        <th>Name</th>
+                        <th>Course</th>
+                        <th>Class</th>
+                        <th>Year</th>
+                        <th>Section</th>
+                        <th>Present</th>
+                        <th>Absent</th>
+                        <!-- <th>Total</th> -->
+                        <th>Attendance %</th>
+                        <th width="120">View</th>
+
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <% summary.forEach(item=>{ %>
+
+                        <tr>
+
+                            <td><%= item.student.rollNumber %></td>
+
+                            <td><%= item.student.name %></td>
+
+                            <td><%= item.student.course %></td>
+
+                            <td><%= item.student.studentClass %></td>
+
+                            <td><%= item.student.academicYear %></td>
+
+                            <td><%= item.student.section %></td>
+
+                            <td>
+
+                                <span class="badge bg-success">
+
+                                    <%= item.present %>
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <span class="badge bg-danger">
+
+                                    <%= item.absent %>
+
+                                </span>
+
+                            </td>
+
+                            <!-- <td>
+
+                                <%= item.total %>
+
+                            </td> -->
+
+                            <td>
+
+                                <span class="badge bg-primary">
+
+                                    <%= item.percentage %>%
+
+                                </span>
+
+                            </td>
+
+                            <td>
+
+                                <a
+                                    href="/attendance/summary/<%= item.student._id %>"
+                                    class="btn btn-info btn-sm">
+
+                                    <i class="bi bi-eye-fill"></i>
+
+                                    View
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    <% }) %>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script>
+
+const searchInput=document.getElementById("searchStudent");
+
+const searchFilter=document.getElementById("searchFilter");
+
+searchInput.addEventListener("keyup",searchTable);
+
+searchFilter.addEventListener("change",searchTable);
+
+function searchTable(){
+
+    const value=searchInput.value.trim().toLowerCase();
+
+    const column=Number(searchFilter.value);
+
+    document.querySelectorAll("tbody tr").forEach(row=>{
+
+        const text=row.cells[column].innerText.toLowerCase();
+
+        row.style.display=text.includes(value)?"":"none";
+
+    });
+
+}
+
+</script>
+
+<%- include("../partials/footer.ejs") %>

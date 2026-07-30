@@ -26,32 +26,44 @@
     <!-- Search Box -->
     <div class="card shadow-sm border-0 mb-4">
 
-        <div class="card-body">
+    <div class="card-body">
 
-            <form action="/students" method="GET">
+        <div class="input-group">
 
-                <div class="input-group">
+            <select
+                id="searchFilter"
+                class="form-select"
+                style="max-width:200px;">
 
-                    <input
-                        type="text"
-                        name="search"
-                        id="searchStudent"
-                        class="form-control"
-                        placeholder="Search">
+                <option value="0">Roll Number</option>
 
-                    <button class="btn btn-primary">
+                <option value="1">Student Name</option>
 
-                        <i class="bi bi-search"></i>
+                <option value="2">Course</option>
 
-                        Search
+                <option value="3">Year</option>
 
-                    </button>
+                <option value="4">Class</option>
 
-                </div>
+                <option value="5">Phone</option>
 
-            </form>
+            </select>
 
-        </div>
+                  <input
+                      type="text"
+                      id="searchStudent"
+                       class="form-control"
+                       placeholder="Search...">
+
+                <span class="input-group-text">
+
+                       <i class="bi bi-search"></i>
+
+                </span>
+
+            </div>
+
+         </div>
 
     </div>
 
@@ -150,31 +162,32 @@
 
 </div>
 <script>
-const search = document.getElementById("searchStudent");
 
-search.addEventListener("keyup", function () {
+const searchInput = document.getElementById("searchStudent");
+const searchFilter = document.getElementById("searchFilter");
 
-    const value = this.value.trim().toLowerCase();
+searchInput.addEventListener("keyup", searchTable);
+searchFilter.addEventListener("change", searchTable);
 
-    document.querySelectorAll("tbody tr").forEach(row => {
+function searchTable() {
 
-        const roll = row.cells[0].innerText.toLowerCase();
-        const name = row.cells[1].innerText.toLowerCase();
-        const course = row.cells[2].innerText.toLowerCase();
-        const year = row.cells[3].innerText.toLowerCase();
-        const section = row.cells[4].innerText.toLowerCase();
+    const value = searchInput.value.trim().toLowerCase();
 
-        if (
-            roll.includes(value) ||
-            name.includes(value) ||
-            course.includes(value) ||
-            year.includes(value) ||
-            section.includes(value)
-        ) {
+    const column = Number(searchFilter.value);
+
+    const rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(row => {
+
+        const cell = row.cells[column].innerText.toLowerCase();
+
+        if (cell.includes(value)) {
 
             row.style.display = "";
 
-        } else {
+        }
+
+        else {
 
             row.style.display = "none";
 
@@ -182,7 +195,8 @@ search.addEventListener("keyup", function () {
 
     });
 
-});
+}
+
 </script>
 
 <%- include("../partials/footer.ejs") %>

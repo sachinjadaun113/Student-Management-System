@@ -5,6 +5,8 @@ const { isAuthenticated } = require("../../middleware/authMiddleware");
 
 const {
     getAllAttendance,
+    getAttendanceSummary,
+    getStudentAttendanceSummary,
     showMarkAttendanceForm,
     markAttendance,
     showEditAttendanceForm,
@@ -14,6 +16,12 @@ const {
 
 // Attendance History
 router.get("/attendance", isAuthenticated, getAllAttendance);
+
+// Attendance Summary
+router.get("/attendance/summary", isAuthenticated, getAttendanceSummary);
+
+// Attendanece page by id
+router.get("/attendance/summary/:id", isAuthenticated, getStudentAttendanceSummary );
 
 // Mark Attendance
 router.get("/attendance/mark", isAuthenticated, showMarkAttendanceForm);

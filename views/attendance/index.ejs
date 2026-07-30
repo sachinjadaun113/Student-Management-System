@@ -23,13 +23,63 @@
 
         </div>
 
-        <a href="/attendance/mark" class="btn btn-success">
+<div>
 
-            <i class="bi bi-calendar-check"></i>
+    <a href="/attendance/summary" class="btn btn-primary me-2">
 
-            Mark Attendance
+        <i class="bi bi-bar-chart-fill"></i>
 
-        </a>
+        Attendance Summary
+
+    </a>
+
+    <a href="/attendance/mark" class="btn btn-success">
+
+        <i class="bi bi-calendar-check"></i>
+
+        Mark Attendance
+
+    </a>
+
+</div>
+
+    </div>
+
+    <div class="card shadow-sm border-0 mb-4">
+
+    <div class="card-body">
+
+        <div class="input-group">
+
+            <select
+                id="searchFilter"
+                class="form-select"
+                style="max-width:200px;">
+
+                <option value="0">Date</option>
+                <option value="1">Roll Number</option>
+                <option value="2">Student Name</option>
+                <option value="3">Course</option>
+                <option value="4">Class</option>
+                <option value="5">Status</option>
+
+            </select>
+
+            <input
+                type="text"
+                id="searchAttendance"
+                class="form-control"
+                placeholder="Search Attendance...">
+
+            <span class="input-group-text">
+
+                <i class="bi bi-search"></i>
+
+            </span>
+
+        </div>
+
+    </div>
 
     </div>
 
@@ -159,5 +209,41 @@
     <% } %>
 
 </div>
+
+<script>
+
+const searchInput = document.getElementById("searchAttendance");
+const searchFilter = document.getElementById("searchFilter");
+
+searchInput.addEventListener("keyup", searchAttendance);
+searchFilter.addEventListener("change", searchAttendance);
+
+function searchAttendance() {
+
+    const value = searchInput.value.trim().toLowerCase();
+
+    const column = Number(searchFilter.value);
+
+    const rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(row => {
+
+        const text = row.cells[column].innerText.toLowerCase();
+
+        if (text.includes(value)) {
+
+            row.style.display = "";
+
+        } else {
+
+            row.style.display = "none";
+
+        }
+
+    });
+
+}
+
+</script>
 
 <%- include("../partials/footer.ejs") %>

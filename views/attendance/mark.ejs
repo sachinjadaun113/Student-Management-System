@@ -55,19 +55,43 @@
 
                 <div class="col-md-8">
 
-                    <label class="form-label fw-semibold">
+    <label class="form-label fw-semibold">
 
-                        Search Student
+        Search Student
 
-                    </label>
+    </label>
 
-                    <input
-                     type="text"
-                     id="searchStudent"
-                     class="form-control"
-                     placeholder="Search by Roll No., Name, Course or Year">
+    <div class="input-group">
 
-                </div>
+        <select
+            id="searchFilter"
+            class="form-select"
+            style="max-width:180px;">
+
+            <option value="0">Roll No.</option>
+            <option value="1">Name</option>
+            <option value="2">Course</option>
+            <option value="3">Class</option>
+            <option value="4">Year</option>
+            <option value="5">Section</option>
+
+        </select>
+
+             <input
+                type="text"
+                id="searchStudent"
+                class="form-control"
+                 placeholder="Search...">
+
+             <span class="input-group-text">
+
+              <i class="bi bi-search"></i>
+
+           </span>
+
+         </div>
+
+    </div>
 
             </div>
 
@@ -211,31 +235,31 @@
 
 <script>
 
-const search = document.getElementById("searchStudent");
+const searchInput = document.getElementById("searchStudent");
+const searchFilter = document.getElementById("searchFilter");
 
-search.addEventListener("keyup", function () {
+searchInput.addEventListener("keyup", searchTable);
+searchFilter.addEventListener("change", searchTable);
 
-    const value = this.value.trim().toLowerCase();
+function searchTable() {
 
-    document.querySelectorAll("tbody tr").forEach(row => {
+    const value = searchInput.value.trim().toLowerCase();
 
-        const roll = row.cells[0].innerText.toLowerCase();
-        const name = row.cells[1].innerText.toLowerCase();
-        const course = row.cells[2].innerText.toLowerCase();
-        const year = row.cells[3].innerText.toLowerCase();
-        const section = row.cells[4].innerText.toLowerCase();
+    const column = Number(searchFilter.value);
 
-        if (
-            roll.includes(value) ||
-            name.includes(value) ||
-            course.includes(value) ||
-            year.includes(value) ||
-            section.includes(value)
-        ) {
+    const rows = document.querySelectorAll("tbody tr");
+
+    rows.forEach(row => {
+
+        const cell = row.cells[column].innerText.toLowerCase();
+
+        if (cell.includes(value)) {
 
             row.style.display = "";
 
-        } else {
+        }
+
+        else {
 
             row.style.display = "none";
 
@@ -243,7 +267,7 @@ search.addEventListener("keyup", function () {
 
     });
 
-});
+}
 
 document.getElementById("attendanceDate").addEventListener("change", function () {
 
