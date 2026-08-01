@@ -1,50 +1,38 @@
 # 🎓 Student Management System
 
-A full-stack **Student Management System** built using **Node.js**, **Express.js**, **MongoDB**, **Mongoose**, **EJS**, and **Bootstrap 5** following the **MVC (Model-View-Controller)** architecture.
+A full-stack **Student Management System** built using **Node.js**, **Express.js**, **MongoDB Atlas**, **Mongoose**, **EJS**, and **Bootstrap 5**, following the **MVC (Model-View-Controller)** architecture.
 
-The application enables administrators to securely manage students, courses, and attendance records through a modern, responsive web interface.
+The application enables administrators to securely manage **Students, Courses, and Attendance Records** through a modern, responsive web interface. It includes authentication, attendance tracking, attendance summary reports, search & filtering, and RESTful REST APIs.
+
+The project is successfully deployed using **Render** with **MongoDB Atlas** as the cloud database.
 
 ---
 
 # 📌 Project Objective
 
-The objective of this project is to design and develop a complete Student Management System while learning full-stack web development using the MERN ecosystem (without React).
+The objective of this project is to design and develop a complete Student Management System while learning full-stack web development using Node.js, Express.js, MongoDB Atlas, EJS, and Bootstrap.
 
 This project was developed as an internship assignment while following professional software development practices such as:
 
-* MVC Architecture
-* RESTful APIs
-* Authentication & Authorization
-* Session Management
-* Responsive UI
-* Git Version Control
-* Project Documentation
+- MVC Architecture
+- RESTful APIs
+- Authentication & Authorization
+- Session Management
+- Responsive UI
+- Git Version Control
+- Project Documentation
+- Cloud Database Integration
+- Application Deployment
 
 ---
 
 # 🚀 Live Demo
 
-**Website**
+### 🌐 Live Website
 
-> Coming Soon (Deployment Scheduled)
+> **https://sachins-student-management-system.onrender.com**
 
-```
-https://your-live-project-link.com
-```
-
----
-
-# 📸 Screenshots
-
-> Screenshots will be added after deployment.
-
-* Login Page
-* Dashboard
-* Student Management
-* Course Management
-* Attendance History
-* Attendance Summary
-* Student Details
+Replace the above URL with your Render deployment link.
 
 ---
 
@@ -52,139 +40,142 @@ https://your-live-project-link.com
 
 ## Frontend
 
-* EJS
-* HTML5
-* CSS3
-* Bootstrap 5
-* Bootstrap Icons
-* JavaScript
+- EJS
+- HTML5
+- CSS3
+- Bootstrap 5
+- Bootstrap Icons
+- JavaScript
 
 ## Backend
 
-* Node.js
-* Express.js
+- Node.js
+- Express.js
 
 ## Database
 
-### Development
-
-* MongoDB
-
-### Production (Coming Soon)
-
-* MongoDB Atlas
+- MongoDB Atlas
+- Mongoose ODM
 
 ## Authentication
 
-* Express Session
-* bcrypt
+- Express Session
+- bcrypt
+
+## Deployment
+
+- Render
 
 ## Tools
 
-* VS Code
-* Git
-* GitHub
-* Postman
+- VS Code
+- Git
+- GitHub
+- MongoDB Atlas
+- Postman
 
 ---
 
 # ✨ Features
 
-## Admin Authentication
+## 🔐 Admin Authentication
 
-* Secure Admin Login
-* Session-based Authentication
-* Protected Routes
-* Logout
-
----
-
-## Dashboard
-
-* Total Students
-* Total Courses
-* System Information
-* Quick Navigation
+- Secure Admin Login
+- Session-based Authentication
+- Protected Routes
+- Logout Functionality
 
 ---
 
-## Student Management
+## 📊 Dashboard
 
-* Add Student
-* View Student List
-* View Student Details
-* Edit Student
-* Delete Student
-* Search Students
-* Filter Students
+- Total Students
+- Total Courses
+- Current Date
+- System Information
+- Quick Navigation
 
 ---
 
-## Course Management
+## 👨‍🎓 Student Management
 
-* Add Course
-* Edit Course
-* Delete Course
-* Search Courses
-
----
-
-## Attendance Management
-
-* Mark Daily Attendance
-* Attendance History
-* Edit Attendance
-* Delete Attendance
-* Duplicate Attendance Prevention
-* Date-wise Attendance
-* Roll Number Sorting
+- Add Student
+- View Student List
+- View Student Details
+- Edit Student
+- Delete Student
+- Search Students
+- Filter Students
 
 ---
 
-## Attendance Summary
+## 📚 Course Management
 
-* Present Count
-* Absent Count
-* Total Classes
-* Attendance Percentage
-* Individual Student Attendance Report
-* Date Range Filter
-* Search & Filter
+- Add Course
+- Edit Course
+- Delete Course
+- Search Courses
 
 ---
 
-## Search & Filters
+## 📅 Attendance Management
+
+- Mark Daily Attendance
+- Attendance History
+- Edit Attendance
+- Delete Attendance
+- Duplicate Attendance Prevention
+- Date-wise Attendance
+- Roll Number Sorting
+
+---
+
+## 📈 Attendance Summary
+
+- Present Count
+- Absent Count
+- Total Classes
+- Attendance Percentage
+- Individual Student Attendance Report
+- Date Range Filter
+- Search & Filter
+- View Complete Student Attendance History
+
+---
+
+## 🔍 Search & Filter
 
 Search functionality is available in:
 
-* Students
-* Courses
-* Attendance
-* Attendance Summary
+- Students
+- Courses
+- Attendance
+- Attendance Summary
 
 Supported filters include:
 
-* Roll Number
-* Student Name
-* Course
-* Academic Year
-* Class
-* Section
-* Attendance Status
-* Date
+- Roll Number
+- Student Name
+- Course
+- Academic Year
+- Class
+- Section
+- Attendance Status
+- Date
 
 ---
 
-## User Interface
+## 🎨 User Interface
 
-* Responsive Bootstrap 5 Design
-* Professional Dashboard
-* Responsive Tables
-* Bootstrap Icons
-* Modern Forms
-* Reusable Header
-* Reusable Navbar
-* Reusable Footer
+- Responsive Bootstrap 5 Design
+- Modern Dashboard
+- Responsive Tables
+- Bootstrap Icons
+- Professional Forms
+- Reusable Header
+- Reusable Navbar
+- Sticky Footer
+- Clean & Simple Layout
 
 ---
 
@@ -240,6 +231,7 @@ Student-Management-System/
 ├── .env
 ├── .gitignore
 ├── package.json
+├── package-lock.json
 ├── server.js
 └── README.md
 ```
@@ -248,39 +240,51 @@ Student-Management-System/
 
 # ⚙ Installation
 
-Clone the repository
+### Clone Repository
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/yourusername/Student-Management-System.git
 ```
 
-Move into the project
+### Move into Project
 
 ```bash
 cd Student-Management-System
 ```
 
-Install dependencies
+### Install Dependencies
 
 ```bash
 npm install
 ```
 
-Create a `.env` file
+### Create `.env`
 
 ```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_atlas_connection_string
 SESSION_SECRET=your_secret_key
 ```
 
-Run the application
+### Seed Default Admin
 
 ```bash
-npm start
+node scripts/seedAdmin.js
 ```
 
-Visit
+### Run Development Server
+
+```bash
+npm run dev
+```
+
+### Run Production Server
+
+```bash
+npm run dev
+```
+
+Open
 
 ```
 http://localhost:5000
@@ -290,13 +294,13 @@ http://localhost:5000
 
 # 👤 Default Admin Credentials
 
-Before logging in, seed the default administrator.
+After running
 
 ```bash
 node scripts/seedAdmin.js
 ```
 
-Default Credentials
+Use
 
 ```
 Username : admin
@@ -307,88 +311,85 @@ Password : admin123
 
 # 📡 REST APIs
 
-### Students
+## Students
 
-* Create Student
-* Get All Students
-* Get Student By ID
-* Update Student
-* Delete Student
+- Create Student
+- Get All Students
+- Get Student By ID
+- Update Student
+- Delete Student
 
-### Courses
+## Courses
 
-* Create Course
-* Get All Courses
-* Update Course
-* Delete Course
+- Create Course
+- Get All Courses
+- Update Course
+- Delete Course
 
-### Attendance
+## Attendance
 
-* Mark Attendance
-* Get Attendance
-* Update Attendance
-* Delete Attendance
+- Mark Attendance
+- Get Attendance
+- Update Attendance
+- Delete Attendance
 
 ---
 
-# 📊 Current Project Status
+# 📊 Project Status
 
-| Module                | Status      |
-| --------------------- | ----------- |
+| Module                | Status        |
+|-----------------------|---------------|
 | Authentication        | ✅ Completed |
 | Dashboard             | ✅ Completed |
 | Student Management    | ✅ Completed |
 | Course Management     | ✅ Completed |
 | Attendance Management | ✅ Completed |
 | Attendance Summary    | ✅ Completed |
+| Student Reports       | ✅ Completed |
 | Search & Filter       | ✅ Completed |
 | Responsive UI         | ✅ Completed |
 | MVC Architecture      | ✅ Completed |
 | REST APIs             | ✅ Completed |
+| MongoDB Atlas         | ✅ Completed |
+| Render Deployment     | ✅ Completed |
 | Documentation         | ✅ Completed |
-| MongoDB Atlas         | ⏳ Pending   |
-| Deployment            | ⏳ Pending   |
 
 ---
 
-# 🚀 Deployment (To Be Completed)
+# ☁ Deployment
 
-The application is prepared for deployment.
+The application is successfully deployed using:
 
-Planned deployment tasks:
+- ✅ Render (Hosting)
+- ✅ MongoDB Atlas (Cloud Database)
+- ✅ Environment Variables
+- ✅ Express Session
+- ✅ Production Build
+- ✅ HTTPS Enabled
 
-* Configure MongoDB Atlas
-* Update Environment Variables
-* Deploy Application
-* Verify Production Build
-* Add Live Demo Link
-* Upload Final Screenshots
-
----
-
-# 🔮 Future Enhancements
-
-* Export Attendance to PDF
-* Export Attendance to Excel
-* Student Profile Images
-* Email Notifications
-* Password Reset
-* Role-based Authentication
-* Analytics Dashboard
-* Mobile Responsive Improvements
 
 ---
 
 # 👨‍💻 Author
 
-**Sachin Jadaun**
+## Sachin Jadaun
 
-LinkedIn:https://www.linkedin.com/in/sachinjadaun113/?utm_source=chatgpt.com
+**GitHub**
 
-GitHub:https://github.com/sachinjadaun113?utm_source=chatgpt.com
+https://github.com/sachinjadaun113
+
+**LinkedIn**
+
+https://www.linkedin.com/in/sachinjadaun113/
+
+---
+
+# 🙏 Acknowledgements
+
+This project was developed as part of an internship to strengthen practical knowledge of full-stack web development using Node.js, Express.js, MongoDB Atlas, EJS, and Bootstrap while following the MVC architecture.
 
 ---
 
 # 📄 License
 
-This project was developed for educational and internship purposes.
+This project is developed for educational, learning, and internship purposes.
